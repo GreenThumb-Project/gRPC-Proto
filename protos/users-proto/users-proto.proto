@@ -14,7 +14,9 @@ service UserManagement{
 
     rpc GetUserByIdProfile(GetUserByIdProfileRequest) returns (GetUserByIdProfileResponces);
 
-    rpc  UpdateUserProfile(UpdateUserProfileRequest) returns (UpdateUserProfileResponces);
+    rpc CreateUserProfile(CreateProfileUsersRequest) returns (CreateProfileUsersResponce);
+
+    rpc UpdateUserProfile(UpdateUserProfileRequest) returns (UpdateUserProfileResponces);
 }
 
 message GetUserByIdRequest{
@@ -65,6 +67,19 @@ message GetUserByIdProfileResponces{
     string UserExpertise=4;
     string Location=5;
     string AvatarUrl=6;
+}
+
+message CreateProfileUsersRequest {
+    string UserId=1;
+    string FullName=2;
+    string Bio=3;
+    string UserExpertise=4;
+    string Location=5;
+    string AvatarUrl=6;
+}
+
+message CreateProfileUsersResponce {
+    bool success = 1;
 }
 
 //update user profile request
