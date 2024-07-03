@@ -5,6 +5,9 @@ option go_package = "generated/users";
 package users;
 
 service UserManagement{
+
+    rpc CheckUser(UserRequest) returns (UserResponse);
+
     rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponce);
 
     rpc CreateUser(CreateUsersRequest) returns (CreateUsersResponce);
@@ -16,6 +19,14 @@ service UserManagement{
     rpc CreateUserProfile(CreateProfileUsersRequest) returns (CreateProfileUsersResponce);
 
     rpc UpdateUserProfile(UpdateUserProfileRequest) returns (UpdateUserProfileResponces);
+}
+
+message UserRequest {
+    string user_id = 1;
+}
+
+message UserResponse {
+    bool exists = 1;
 }
 
 message GetUserByIdRequest{
