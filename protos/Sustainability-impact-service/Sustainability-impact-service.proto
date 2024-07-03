@@ -143,18 +143,27 @@ message GetUsersLeaderboardResponse{
 
 message UsersLeaderboard {
     string userId=1;
-    float points=2;
+    float totalProgres=2;
 }
 
 // Bu method barcha jamoalar orasida eng yaxshi natijalarga erishganlarni ko'rsatish uchun ishlatiladi.
 
-message GetCommunitiesLeaderboardRequest{}
+message GetCommunitiesLeaderboardRequest {
+    repeated CommunityMembers communityMembers = 1;
+}
+
+message CommunityMembers {
+    string communityId = 1;
+    string communityName = 2;
+    repeated string members = 3;
+}
 
 message GetCommunitiesLeaderboardResponse{
     repeated CommunitiesLeaderboard communitiesLeaderboards = 1;
 }
 
 message CommunitiesLeaderboard {
-    string communityId=1;
-    float points=2;
+    string communityName=1;
+    string communityId = 2;
+    float totalProgres=3;
 }
