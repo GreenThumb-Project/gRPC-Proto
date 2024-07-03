@@ -5,9 +5,6 @@ option go_package = "generated/users";
 package users;
 
 service UserManagement{
-
-    rpc CheckUser(GetUserByIdRequest) returns (GetUserByIdResponce);
-
     rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponce);
 
     rpc CreateUser(CreateUsersRequest) returns (CreateUsersResponce);
