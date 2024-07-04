@@ -102,7 +102,8 @@ message Comunity{
 // Jamiyat ID raqami ko'rsatiladi va foydalanuvchi a'zolikni so'raydi.
 
 message JoinCommunityRequest{
-    string id=1;
+    string community_id = 1;
+    string user_id=2;
 }
 
 message JoinCommunityResponse{
@@ -112,7 +113,7 @@ message JoinCommunityResponse{
 // Bu metod orqali foydalanuvchi muayyan jamiyatni tark etishi mumkin. 
 // Jamiyat ID raqami ko'rsatiladi va foydalanuvchi a'zolikdan chiqadi.
 message LeaveCommunityRequest{
-    string id =1;
+    string community_id =1;
 }
 
 message LeaveCommunityResponse{
@@ -141,7 +142,7 @@ message CreateCommunityEventResponse {
 // Bu metod orqali foydalanuvchi muayyan jamiyatdagi barcha tadbirlarning ro'yxatini ko'rishi mumkin. 
 // Jamiyat ID raqami ko'rsatiladi va serverdan tadbirlar ro'yxati olinadi.
 message ListCommunityEventsRequest {
-    string id = 1;
+    string community_id = 1;
 }
 
 message ListCommunityEventsResponse {
