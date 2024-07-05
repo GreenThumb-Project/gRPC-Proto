@@ -9,6 +9,8 @@ service SustainabilityimpactService{
 
     rpc GetUserImpact(GetUserImpactRequest) returns (GetUserImpactResponse);
 
+    rpc CreateSustainability(CreateSustainabilityRequest) returns (CreateSustainabilityResponse);
+
     rpc  GetCommunityImpact(GetCommunityImpactRequest) returns (GetCommunityImpactResponse);
 
     rpc GetChallenges(GetChallengesRequest) returns (GetChallengesResponse);
@@ -28,6 +30,7 @@ service SustainabilityimpactService{
 // Masalan, foydalanuvchi chiqindini qayta ishlash yoki elektr energiyasini tejash bo'yicha ma'lumotlarni kiritishi mumkin.
 
 message LogImpactRequest{
+    string user_id=1;
     string category=2;
     string amount=3;
     string unit=4;
@@ -50,6 +53,7 @@ message GetUserImpactResponse{
 }
 
 message UserImpact{
+    string user_id=1;
     string category=2;
     string amount=3;
     string unit=4;
@@ -166,4 +170,14 @@ message CommunitiesLeaderboard {
     string communityName=1;
     string communityId = 2;
     float totalProgres=3;
+}
+message CreateSustainabilityRequest{
+    string title=1;
+    string description=2;
+    float goal_amount=3;
+    string goal_unit=4;
+}
+
+message CreateSustainabilityResponse{
+    bool success=1;
 }
