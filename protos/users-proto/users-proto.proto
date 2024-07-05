@@ -12,6 +12,8 @@ service UserManagement{
 
     rpc CreateUser(CreateUsersRequest) returns (CreateUsersResponce);
 
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+
     rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponce);
 
     rpc GetUserByIdProfile(GetUserByIdProfileRequest) returns (GetUserByIdProfileResponces);
@@ -44,13 +46,25 @@ message CreateUsersRequest{
     string UserId=1;
     string UserName=2;
     string Email =3;
+    string Password = 4;
 }
 
 // create user response
 message CreateUsersResponce{
     string UserId=1;
-    string UserName=2;
-    string Email =3;
+}
+
+// update user 
+
+message UpdateUserRequest {
+    string user_id = 1;
+    string username = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message UpdateUserResponse {
+    bool success = 1;
 }
 
 // delete user request
