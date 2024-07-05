@@ -8,7 +8,7 @@ service UserManagement{
 
     rpc CheckUser(UserRequest) returns (UserResponse);
 
-    rpc EmailExists(EmailExistsRequest) returns (EmailExistsRequest);
+    rpc EmailExists(EmailExistsRequest) returns (EmailExistsResponse);
 
     rpc Login(LoginRequest) returns (LoginResponse);
     
