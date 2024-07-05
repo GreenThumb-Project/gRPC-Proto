@@ -8,6 +8,8 @@ service UserManagement{
 
     rpc CheckUser(UserRequest) returns (UserResponse);
 
+    rpc EmailExists(EmailExistsRequest) returns (EmailExistsRequest);
+
     rpc Login(LoginRequest) returns (LoginResponse);
     
     rpc CreateUser(CreateUsersRequest) returns (CreateUsersResponce);
@@ -33,14 +35,14 @@ message UserResponse {
     bool exists = 1;
 }
 
-message GetUserByIdRequest{
-    string UserId=1;
+// Emial exists
+
+message EmailExistsRequest {
+    string email = 1;
 }
 
-message GetUserByIdResponce{
-    string UserId=1;
-    string UserName=2;
-    string Email =3;
+message EmailExistsResponse {
+    bool exists = 1;
 }
 
 //login request
@@ -69,6 +71,18 @@ message CreateUsersRequest{
 // create user response
 message CreateUsersResponce{
     string UserId=1;
+}
+
+// get user by id
+
+message GetUserByIdRequest{
+    string UserId=1;
+}
+
+message GetUserByIdResponce{
+    string UserId=1;
+    string UserName=2;
+    string Email =3;
 }
 
 // update user 
