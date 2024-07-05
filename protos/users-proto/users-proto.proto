@@ -56,8 +56,7 @@ message LoginResponse {
     string user_id=1;
     string username=2;
     string email =3;
-    string password = 4;
-    string token = 5;
+    string token = 4;
 }
 
 //create user request
