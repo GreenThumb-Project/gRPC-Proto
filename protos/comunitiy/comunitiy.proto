@@ -31,6 +31,8 @@ service ComunityService{
 
     rpc ListForumPostComments(ListForumPostCommentsRequest) returns (ListForumPostCommentsResponse);
 
+    rpc CommunityMembers(CommunityMembersRequest) returns(CommunityMembersResponse);
+
 }
 //  Bu metod orqali foydalanuvchi yangi jamiyat tashkil qilishi mumkin. 
 // Jamiyatning nomi, tavsifi va boshqa kerakli ma'lumotlar serverga yuboriladi va yangi jamiyat yaratiladi.
@@ -228,4 +230,12 @@ message ListForumPostComment {
     string id = 1;
     string userId = 2;
     string comment = 3;
+}
+
+message CommunityMembersRequest{
+    string comunity_id=1;
+}
+
+message CommunityMembersResponse{
+    repeated string members=1;
 }
