@@ -32,7 +32,7 @@ service SustainabilityimpactService{
 message LogImpactRequest{
     string user_id=1;
     string category=2;
-    string amount=3;
+    float amount=3;
     string unit=4;
 }
 
