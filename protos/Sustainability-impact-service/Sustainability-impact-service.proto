@@ -63,12 +63,15 @@ message UserImpact{
 // ID o'rniga jamoaning identifikatori qo'yiladi.
 
 message GetCommunityImpactRequest{
-    string id=1;
+    repeated CommunityMembers communityMembers = 1;
 }
 
 message GetCommunityImpactResponse{
-    string id=1;
+    repeated CommunityImpact communityImpacts=1;
+}
 
+message CommunityImpact{
+    string id=1;
     string user_id=2;
     string category=3;
     float goalAmount=4;
