@@ -86,7 +86,13 @@ message DeleteCommunityResponse{
 // Bu metod orqali foydalanuvchi mavjud barcha jamiyatlarning ro'yxatini ko'rishi mumkin. 
 // Serverdan barcha jamiyatlar haqida umumiy ma'lumotlar olinadi.
 
-message ListCommunitiesRequest{}
+message ListCommunitiesRequest{
+    string name=2;
+    string description=3;
+    string location=4;
+    int64 offset=5;
+    int64 limit=6;
+}
 
 message ListCommunitiesResponse{
     repeated Comunity comunitys=1;
