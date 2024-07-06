@@ -120,6 +120,7 @@ message JoinCommunityResponse{
 // Jamiyat ID raqami ko'rsatiladi va foydalanuvchi a'zolikdan chiqadi.
 message LeaveCommunityRequest{
     string community_id =1;
+    string user_id = 2;
 }
 
 message LeaveCommunityResponse{
